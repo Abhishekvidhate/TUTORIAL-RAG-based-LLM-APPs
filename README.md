@@ -12,7 +12,7 @@ The tutorial covers the following aspects:
 - Embedding generation using HuggingFace's models integrated with LangChain.
 - Model inference ( fastest reponse for LLM ) using GROQ's LPU(language processing unit) for LLAMA3 model from Meta.
 - Utilizing AstraDB from DataStax as a vector database for storing embeddings.
--[more about GROQ's LPU](https://wow.groq.com/lpu-inference-engine/)
+- [more about GROQ's LPU](https://wow.groq.com/lpu-inference-engine/)
 
 ## Frameworks and Libraries
 
