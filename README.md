@@ -24,20 +24,19 @@ used huggingface's Sentence-transformers for free embedding of text to vectors
 - [HuggingFace Transformers GitHub](https://github.com/huggingface/transformers)
 - [HuggingFace Transformers Documentation](https://huggingface.co/transformers/)
 
-![HuggingFace Transformers](images/huggingface_transformers.png)
 
 ### Groq LLAMA3 Model
 Groq is utilized for its fast inference capabilities. More information can be found at:
 - [Groq GitHub](https://groq.com/)
 - [LLAMA3 Model Information](https://llama.meta.com/llama3/)
 
-![Groq LLAMA3](images/groq_llama3.png)
 
 ### AstraDB by DataStax
 AstraDB is used as a vector database for storing embeddings. More information can be found at:
 - [DataStax AstraDB](https://www.datastax.com/products/astra)
 
-![DataStax AstraDB](images/datastax_astradb.png)
+![image](https://github.com/Abhishekvidhate/TUTORIAL-RAG-based-LLM-APPs/assets/120262589/af350cd6-9163-4857-97ac-592f0b28493d)
+
 
 ## Setup and Installation
  just run jupyter notebook in google colab ( free tier supported )
