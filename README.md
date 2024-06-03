@@ -28,7 +28,7 @@ used huggingface's Sentence-transformers for free embedding of text to vectors
 
 ### Groq LLAMA3 Model
 Groq is utilized for its fast inference capabilities. More information can be found at:
-- [Groq GitHub](https://groq.com/)
+- [Groq](https://groq.com/)
 - [LLAMA3 Model Information](https://llama.meta.com/llama3/)
 
 
