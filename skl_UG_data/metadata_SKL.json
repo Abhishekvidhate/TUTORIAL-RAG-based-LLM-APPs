@@ -1,0 +1,2415 @@
+{
+    "title": "scikit-learn User Guide",
+    "sections": [
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": []
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": [
+                {
+                    "title": "1.1. Linear Models",
+                    "topics": [
+                        "1.1.1. Ordinary Least Squares",
+                        "1.1.2. Ridge regression and classification",
+                        "1.1.3. Lasso",
+                        "1.1.4. Multi-task Lasso",
+                        "1.1.5. Elastic-Net",
+                        "1.1.6. Multi-task Elastic-Net",
+                        "1.1.7. Least Angle Regression",
+                        "1.1.8. LARS Lasso",
+                        "1.1.9. Orthogonal Matching Pursuit (OMP)",
+                        "1.1.10. Bayesian Regression",
+                        "1.1.11. Logistic regression",
+                        "1.1.12. Generalized Linear Models",
+                        "1.1.13. Stochastic Gradient Descent - SGD",
+                        "1.1.14. Perceptron",
+                        "1.1.15. Passive Aggressive Algorithms",
+                        "1.1.16. Robustness regression: outliers and modeling errors",
+                        "1.1.17. Quantile Regression",
+                        "1.1.18. Polynomial regression: extending linear models with basis functions"
+                    ]
+                },
+                {
+                    "title": "1.2. Linear and Quadratic Discriminant Analysis",
+                    "topics": [
+                        "1.2.1. Dimensionality reduction using Linear Discriminant Analysis",
+                        "1.2.2. Mathematical formulation of the LDA and QDA classifiers",
+                        "1.2.3. Mathematical formulation of LDA dimensionality reduction",
+                        "1.2.4. Shrinkage and Covariance Estimator",
+                        "1.2.5. Estimation algorithms"
+                    ]
+                },
+                {
+                    "title": "1.3. Kernel ridge regression",
+                    "topics": []
+                },
+                {
+                    "title": "1.4. Support Vector Machines",
+                    "topics": [
+                        "1.4.1. Classification",
+                        "1.4.2. Regression",
+                        "1.4.3. Density estimation, novelty detection",
+                        "1.4.4. Complexity",
+                        "1.4.5. Tips on Practical Use",
+                        "1.4.6. Kernel functions",
+                        "1.4.7. Mathematical formulation",
+                        "1.4.8. Implementation details"
+                    ]
+                },
+                {
+                    "title": "1.5. Stochastic Gradient Descent",
+                    "topics": [
+                        "1.5.1. Classification",
+                        "1.5.2. Regression",
+                        "1.5.3. Online One-Class SVM",
+                        "1.5.4. Stochastic Gradient Descent for sparse data",
+                        "1.5.5. Complexity",
+                        "1.5.6. Stopping criterion",
+                        "1.5.7. Tips on Practical Use",
+                        "1.5.8. Mathematical formulation",
+                        "1.5.9. Implementation details"
+                    ]
+                },
+                {
+                    "title": "1.6. Nearest Neighbors",
+                    "topics": [
+                        "1.6.1. Unsupervised Nearest Neighbors",
+                        "1.6.2. Nearest Neighbors Classification",
+                        "1.6.3. Nearest Neighbors Regression",
+                        "1.6.4. Nearest Neighbor Algorithms",
+                        "1.6.5. Nearest Centroid Classifier",
+                        "1.6.6. Nearest Neighbors Transformer",
+                        "1.6.7. Neighborhood Components Analysis"
+                    ]
+                },
+                {
+                    "title": "1.7. Gaussian Processes",
+                    "topics": [
+                        "1.7.1. Gaussian Process Regression (GPR)",
+                        "1.7.2. Gaussian Process Classification (GPC)",
+                        "1.7.3. GPC examples",
+                        "1.7.4. Kernels for Gaussian Processes"
+                    ]
+                },
+                {
+                    "title": "1.8. Cross decomposition",
+                    "topics": [
+                        "1.8.1. PLSCanonical",
+                        "1.8.2. PLSSVD",
+                        "1.8.3. PLSRegression",
+                        "1.8.4. Canonical Correlation Analysis"
+                    ]
+                },
+                {
+                    "title": "1.9. Naive Bayes",
+                    "topics": [
+                        "1.9.1. Gaussian Naive Bayes",
+                        "1.9.2. Multinomial Naive Bayes",
+                        "1.9.3. Complement Naive Bayes",
+                        "1.9.4. Bernoulli Naive Bayes",
+                        "1.9.5. Categorical Naive Bayes",
+                        "1.9.6. Out-of-core naive Bayes model fitting"
+                    ]
+                },
+                {
+                    "title": "1.10. Decision Trees",
+                    "topics": [
+                        "1.10.1. Classification",
+                        "1.10.2. Regression",
+                        "1.10.3. Multi-output problems",
+                        "1.10.4. Complexity",
+                        "1.10.5. Tips on practical use",
+                        "1.10.6. Tree algorithms: ID3, C4.5, C5.0 and CART",
+                        "1.10.7. Mathematical formulation",
+                        "1.10.8. Missing Values Support",
+                        "1.10.9. Minimal Cost-Complexity Pruning"
+                    ]
+                },
+                {
+                    "title": "1.11. Ensembles: Gradient boosting, random forests, bagging, voting, stacking",
+                    "topics": [
+                        "1.11.1. Gradient-boosted trees",
+                        "1.11.2. Random forests and other randomized tree ensembles",
+                        "1.11.3. Bagging meta-estimator",
+                        "1.11.4. Voting Classifier",
+                        "1.11.5. Voting Regressor",
+                        "1.11.6. Stacked generalization",
+                        "1.11.7. AdaBoost"
+                    ]
+                },
+                {
+                    "title": "1.12. Multiclass and multioutput algorithms",
+                    "topics": [
+                        "1.12.1. Multiclass classification",
+                        "1.12.2. Multilabel classification",
+                        "1.12.3. Multiclass-multioutput classification",
+                        "1.12.4. Multioutput regression"
+                    ]
+                },
+                {
+                    "title": "1.13. Feature selection",
+                    "topics": [
+                        "1.13.1. Removing features with low variance",
+                        "1.13.2. Univariate feature selection",
+                        "1.13.3. Recursive feature elimination",
+                        "1.13.4. Feature selection using SelectFromModel",
+                        "1.13.5. Sequential Feature Selection",
+                        "1.13.6. Feature selection as part of a pipeline"
+                    ]
+                },
+                {
+                    "title": "1.14. Semi-supervised learning",
+                    "topics": [
+                        "1.14.1. Self Training",
+                        "1.14.2. Label Propagation"
+                    ]
+                },
+                {
+                    "title": "1.15. Isotonic regression",
+                    "topics": []
+                },
+                {
+                    "title": "1.16. Probability calibration",
+                    "topics": [
+                        "1.16.1. Calibration curves",
+                        "1.16.2. Calibrating a classifier",
+                        "1.16.3. Usage"
+                    ]
+                },
+                {
+                    "title": "1.17. Neural network models (supervised)",
+                    "topics": [
+                        "1.17.1. Multi-layer Perceptron",
+                        "1.17.2. Classification",
+                        "1.17.3. Regression",
+                        "1.17.4. Regularization",
+                        "1.17.5. Algorithms",
+                        "1.17.6. Complexity",
+                        "1.17.7. Mathematical formulation",
+                        "1.17.8. Tips on Practical Use",
+                        "1.17.9. More control with warm_start"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": [
+                {
+                    "title": "2.1. Gaussian mixture models",
+                    "topics": [
+                        "2.1.1. Gaussian Mixture",
+                        "2.1.2. Variational Bayesian Gaussian Mixture"
+                    ]
+                },
+                {
+                    "title": "2.2. Manifold learning",
+                    "topics": [
+                        "2.2.1. Introduction",
+                        "2.2.2. Isomap",
+                        "2.2.3. Locally Linear Embedding",
+                        "2.2.4. Modified Locally Linear Embedding",
+                        "2.2.5. Hessian Eigenmapping",
+                        "2.2.6. Spectral Embedding",
+                        "2.2.7. Local Tangent Space Alignment",
+                        "2.2.8. Multi-dimensional Scaling (MDS)",
+                        "2.2.9. t-distributed Stochastic Neighbor Embedding (t-SNE)",
+                        "2.2.10. Tips on practical use"
+                    ]
+                },
+                {
+                    "title": "2.3. Clustering",
+                    "topics": [
+                        "2.3.1. Overview of clustering methods",
+                        "2.3.2. K-means",
+                        "2.3.3. Affinity Propagation",
+                        "2.3.4. Mean Shift",
+                        "2.3.5. Spectral clustering",
+                        "2.3.6. Hierarchical clustering",
+                        "2.3.7. DBSCAN",
+                        "2.3.8. HDBSCAN",
+                        "2.3.9. OPTICS",
+                        "2.3.10. BIRCH",
+                        "2.3.11. Clustering performance evaluation"
+                    ]
+                },
+                {
+                    "title": "2.4. Biclustering",
+                    "topics": [
+                        "2.4.1. Spectral Co-Clustering",
+                        "2.4.2. Spectral Biclustering",
+                        "2.4.3. Biclustering evaluation"
+                    ]
+                },
+                {
+                    "title": "2.5. Decomposing signals in components (matrix factorization problems)",
+                    "topics": [
+                        "2.5.1. Principal component analysis (PCA)",
+                        "2.5.2. Kernel Principal Component Analysis (kPCA)",
+                        "2.5.3. Truncated singular value decomposition and latent semantic analysis",
+                        "2.5.4. Dictionary Learning",
+                        "2.5.5. Factor Analysis",
+                        "2.5.6. Independent component analysis (ICA)",
+                        "2.5.7. Non-negative matrix factorization (NMF or NNMF)",
+                        "2.5.8. Latent Dirichlet Allocation (LDA)"
+                    ]
+                },
+                {
+                    "title": "2.6. Covariance estimation",
+                    "topics": [
+                        "2.6.1. Empirical covariance",
+                        "2.6.2. Shrunk Covariance",
+                        "2.6.3. Sparse inverse covariance",
+                        "2.6.4. Robust Covariance Estimation"
+                    ]
+                },
+                {
+                    "title": "2.7. Novelty and Outlier Detection",
+                    "topics": [
+                        "2.7.1. Overview of outlier detection methods",
+                        "2.7.2. Novelty Detection",
+                        "2.7.3. Outlier Detection",
+                        "2.7.4. Novelty detection with Local Outlier Factor"
+                    ]
+                },
+                {
+                    "title": "2.8. Density Estimation",
+                    "topics": [
+                        "2.8.1. Density Estimation: Histograms",
+                        "2.8.2. Kernel Density Estimation"
+                    ]
+                },
+                {
+                    "title": "2.9. Neural network models (unsupervised)",
+                    "topics": [
+                        "2.9.1. Restricted Boltzmann machines"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": [
+                {
+                    "title": "3.1. Cross-validation: evaluating estimator performance",
+                    "topics": [
+                        "3.1.1. Computing cross-validated metrics",
+                        "3.1.2. Cross validation iterators",
+                        "3.1.3. A note on shuffling",
+                        "3.1.4. Cross validation and model selection",
+                        "3.1.5. Permutation test score"
+                    ]
+                },
+                {
+                    "title": "3.2. Tuning the hyper-parameters of an estimator",
+                    "topics": [
+                        "3.2.1. Exhaustive Grid Search",
+                        "3.2.2. Randomized Parameter Optimization",
+                        "3.2.3. Searching for optimal parameters with successive halving",
+                        "3.2.4. Tips for parameter search",
+                        "3.2.5. Alternatives to brute force parameter search"
+                    ]
+                },
+                {
+                    "title": "3.3. Metrics and scoring: quantifying the quality of predictions",
+                    "topics": [
+                        "3.3.1. The scoring parameter: defining model evaluation rules",
+                        "3.3.2. Classification metrics",
+                        "3.3.3. Multilabel ranking metrics",
+                        "3.3.4. Regression metrics",
+                        "3.3.5. Clustering metrics",
+                        "3.3.6. Dummy estimators"
+                    ]
+                },
+                {
+                    "title": "3.4. Validation curves: plotting scores to evaluate models",
+                    "topics": [
+                        "3.4.1. Validation curve",
+                        "3.4.2. Learning curve"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": [
+                {
+                    "title": "4.1. Partial Dependence and Individual Conditional Expectation plots",
+                    "topics": [
+                        "4.1.1. Partial dependence plots",
+                        "4.1.2. Individual conditional expectation (ICE) plot",
+                        "4.1.3. Mathematical Definition",
+                        "4.1.4. Computation methods"
+                    ]
+                },
+                {
+                    "title": "4.2. Permutation feature importance",
+                    "topics": [
+                        "4.2.1. Outline of the permutation importance algorithm",
+                        "4.2.2. Relation to impurity-based importance in trees",
+                        "4.2.3. Misleading values on strongly correlated features"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": [
+                {
+                    "title": "5.1. Available Plotting Utilities",
+                    "topics": [
+                        "5.1.1. Display Objects"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": [
+                {
+                    "title": "6.1. Pipelines and composite estimators",
+                    "topics": [
+                        "6.1.1. Pipeline: chaining estimators",
+                        "6.1.2. Transforming target in regression",
+                        "6.1.3. FeatureUnion: composite feature spaces",
+                        "6.1.4. ColumnTransformer for heterogeneous data",
+                        "6.1.5. Visualizing Composite Estimators"
+                    ]
+                },
+                {
+                    "title": "6.2. Feature extraction",
+                    "topics": [
+                        "6.2.1. Loading features from dicts",
+                        "6.2.2. Feature hashing",
+                        "6.2.3. Text feature extraction",
+                        "6.2.4. Image feature extraction"
+                    ]
+                },
+                {
+                    "title": "6.3. Preprocessing data",
+                    "topics": [
+                        "6.3.1. Standardization, or mean removal and variance scaling",
+                        "6.3.2. Non-linear transformation",
+                        "6.3.3. Normalization",
+                        "6.3.4. Encoding categorical features",
+                        "6.3.5. Discretization",
+                        "6.3.6. Imputation of missing values",
+                        "6.3.7. Generating polynomial features",
+                        "6.3.8. Custom transformers"
+                    ]
+                },
+                {
+                    "title": "6.4. Imputation of missing values",
+                    "topics": [
+                        "6.4.1. Univariate vs. Multivariate Imputation",
+                        "6.4.2. Univariate feature imputation",
+                        "6.4.3. Multivariate feature imputation",
+                        "6.4.4. Nearest neighbors imputation",
+                        "6.4.5. Keeping the number of features constant",
+                        "6.4.6. Marking imputed values",
+                        "6.4.7. Estimators that handle NaN values"
+                    ]
+                },
+                {
+                    "title": "6.5. Unsupervised dimensionality reduction",
+                    "topics": [
+                        "6.5.1. PCA: principal component analysis",
+                        "6.5.2. Random projections",
+                        "6.5.3. Feature agglomeration"
+                    ]
+                },
+                {
+                    "title": "6.6. Random Projection",
+                    "topics": [
+                        "6.6.1. The Johnson-Lindenstrauss lemma",
+                        "6.6.2. Gaussian random projection",
+                        "6.6.3. Sparse random projection",
+                        "6.6.4. Inverse Transform"
+                    ]
+                },
+                {
+                    "title": "6.7. Kernel Approximation",
+                    "topics": [
+                        "6.7.1. Nystroem Method for Kernel Approximation",
+                        "6.7.2. Radial Basis Function Kernel",
+                        "6.7.3. Additive Chi Squared Kernel",
+                        "6.7.4. Skewed Chi Squared Kernel",
+                        "6.7.5. Polynomial Kernel Approximation via Tensor Sketch",
+                        "6.7.6. Mathematical Details"
+                    ]
+                },
+                {
+                    "title": "6.8. Pairwise metrics, Affinities and Kernels",
+                    "topics": [
+                        "6.8.1. Cosine similarity",
+                        "6.8.2. Linear kernel",
+                        "6.8.3. Polynomial kernel",
+                        "6.8.4. Sigmoid kernel",
+                        "6.8.5. RBF kernel",
+                        "6.8.6. Laplacian kernel",
+                        "6.8.7. Chi-squared kernel"
+                    ]
+                },
+                {
+                    "title": "6.9. Transforming the prediction target (y)",
+                    "topics": [
+                        "6.9.1. Label binarization",
+                        "6.9.2. Label encoding"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets",
+                    "topics": [
+                        "7.1.1. Iris plants dataset",
+                        "7.1.2. Diabetes dataset",
+                        "7.1.3. Optical recognition of handwritten digits dataset",
+                        "7.1.4. Linnerrud dataset",
+                        "7.1.5. Wine recognition dataset",
+                        "7.1.6. Breast cancer wisconsin (diagnostic) dataset"
+                    ]
+                },
+                {
+                    "title": "7.2. Real world datasets",
+                    "topics": [
+                        "7.2.1. The Olivetti faces dataset",
+                        "7.2.2. The 20 newsgroups text dataset",
+                        "7.2.3. The Labeled Faces in the Wild face recognition dataset",
+                        "7.2.4. Forest covertypes",
+                        "7.2.5. RCV1 dataset",
+                        "7.2.6. Kddcup 99 dataset",
+                        "7.2.7. California Housing dataset",
+                        "7.2.8. Species distribution dataset"
+                    ]
+                },
+                {
+                    "title": "7.3. Generated datasets",
+                    "topics": [
+                        "7.3.1. Generators for classification and clustering",
+                        "7.3.2. Generators for regression",
+                        "7.3.3. Generators for manifold learning",
+                        "7.3.4. Generators for decomposition"
+                    ]
+                },
+                {
+                    "title": "7.4. Loading other datasets",
+                    "topics": [
+                        "7.4.1. Sample images",
+                        "7.4.2. Datasets in svmlight / libsvm format",
+                        "7.4.3. Downloading datasets from the openml.org repository",
+                        "7.4.4. Loading from external datasets"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": [
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data",
+                    "topics": [
+                        "8.1.1. Scaling with instances using out-of-core learning"
+                    ]
+                },
+                {
+                    "title": "8.2. Computational Performance",
+                    "topics": [
+                        "8.2.1. Prediction Latency",
+                        "8.2.2. Prediction Throughput",
+                        "8.2.3. Tips and Tricks"
+                    ]
+                },
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration",
+                    "topics": [
+                        "8.3.1. Parallelism",
+                        "8.3.2. Configuration switches"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": [
+                {
+                    "title": "9.1. Python specific serialization",
+                    "topics": [
+                        "9.1.1. Security & maintainability limitations",
+                        "9.1.2. A more secure format: skops"
+                    ]
+                },
+                {
+                    "title": "9.2. Interoperable formats",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": [
+                {
+                    "title": "10.1. Inconsistent preprocessing",
+                    "topics": []
+                },
+                {
+                    "title": "10.2. Data leakage",
+                    "topics": [
+                        "10.2.1. How to avoid data leakage",
+                        "10.2.2. Data leakage during pre-processing"
+                    ]
+                },
+                {
+                    "title": "10.3. Controlling randomness",
+                    "topics": [
+                        "10.3.1. Using None or RandomState instances, and repeated calls to fit and split",
+                        "10.3.2. Common pitfalls and subtleties",
+                        "10.3.3. General recommendations"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "11.1. Array API support (experimental)",
+                    "topics": [
+                        "11.1.1. Example usage",
+                        "11.1.2. Support for Array API-compatible inputs",
+                        "11.1.3. Common estimator checks"
+                    ]
+                },
+                {
+                    "title": "1.1. Linear Models \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.1. Linear Models",
+                    "topics": [
+                        "1.1.1. Ordinary Least Squares",
+                        "1.1.2. Ridge regression and classification",
+                        "1.1.3. Lasso",
+                        "1.1.4. Multi-task Lasso",
+                        "1.1.5. Elastic-Net",
+                        "1.1.6. Multi-task Elastic-Net",
+                        "1.1.7. Least Angle Regression",
+                        "1.1.8. LARS Lasso",
+                        "1.1.9. Orthogonal Matching Pursuit (OMP)",
+                        "1.1.10. Bayesian Regression",
+                        "1.1.11. Logistic regression",
+                        "1.1.12. Generalized Linear Models",
+                        "1.1.13. Stochastic Gradient Descent - SGD",
+                        "1.1.14. Perceptron",
+                        "1.1.15. Passive Aggressive Algorithms",
+                        "1.1.16. Robustness regression: outliers and modeling errors",
+                        "1.1.17. Quantile Regression",
+                        "1.1.18. Polynomial regression: extending linear models with basis functions"
+                    ]
+                },
+                {
+                    "title": "1.1. Linear Models\u00b6",
+                    "topics": [
+                        "1.1.1. Ordinary Least Squares\u00b6",
+                        "1.1.2. Ridge regression and classification\u00b6",
+                        "1.1.3. Lasso\u00b6",
+                        "1.1.4. Multi-task Lasso\u00b6",
+                        "1.1.5. Elastic-Net\u00b6",
+                        "1.1.6. Multi-task Elastic-Net\u00b6",
+                        "1.1.7. Least Angle Regression\u00b6",
+                        "1.1.8. LARS Lasso\u00b6",
+                        "1.1.9. Orthogonal Matching Pursuit (OMP)\u00b6",
+                        "1.1.10. Bayesian Regression\u00b6",
+                        "1.1.11. Logistic regression\u00b6",
+                        "1.1.12. Generalized Linear Models\u00b6",
+                        "1.1.13. Stochastic Gradient Descent - SGD\u00b6",
+                        "1.1.14. Perceptron\u00b6",
+                        "1.1.15. Passive Aggressive Algorithms\u00b6",
+                        "1.1.16. Robustness regression: outliers and modeling errors\u00b6",
+                        "1.1.17. Quantile Regression\u00b6",
+                        "1.1.18. Polynomial regression: extending linear models with basis functions\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.2. Linear and Quadratic Discriminant Analysis \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.2. Linear and Quadratic Discriminant Analysis",
+                    "topics": [
+                        "1.2.1. Dimensionality reduction using Linear Discriminant Analysis",
+                        "1.2.2. Mathematical formulation of the LDA and QDA classifiers",
+                        "1.2.3. Mathematical formulation of LDA dimensionality reduction",
+                        "1.2.4. Shrinkage and Covariance Estimator",
+                        "1.2.5. Estimation algorithms"
+                    ]
+                },
+                {
+                    "title": "1.2. Linear and Quadratic Discriminant Analysis\u00b6",
+                    "topics": [
+                        "1.2.1. Dimensionality reduction using Linear Discriminant Analysis\u00b6",
+                        "1.2.2. Mathematical formulation of the LDA and QDA classifiers\u00b6",
+                        "1.2.3. Mathematical formulation of LDA dimensionality reduction\u00b6",
+                        "1.2.4. Shrinkage and Covariance Estimator\u00b6",
+                        "1.2.5. Estimation algorithms\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.3. Kernel ridge regression \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.3. Kernel ridge regression",
+                    "topics": []
+                },
+                {
+                    "title": "1.3. Kernel ridge regression\u00b6",
+                    "topics": []
+                },
+                {
+                    "title": "1.4. Support Vector Machines \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.4. Support Vector Machines",
+                    "topics": [
+                        "1.4.1. Classification",
+                        "1.4.2. Regression",
+                        "1.4.3. Density estimation, novelty detection",
+                        "1.4.4. Complexity",
+                        "1.4.5. Tips on Practical Use",
+                        "1.4.6. Kernel functions",
+                        "1.4.7. Mathematical formulation",
+                        "1.4.8. Implementation details"
+                    ]
+                },
+                {
+                    "title": "1.4. Support Vector Machines\u00b6",
+                    "topics": [
+                        "1.4.1. Classification\u00b6",
+                        "1.4.2. Regression\u00b6",
+                        "1.4.3. Density estimation, novelty detection\u00b6",
+                        "1.4.4. Complexity\u00b6",
+                        "1.4.5. Tips on Practical Use\u00b6",
+                        "1.4.6. Kernel functions\u00b6",
+                        "1.4.7. Mathematical formulation\u00b6",
+                        "1.4.8. Implementation details\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.5. Stochastic Gradient Descent \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.5. Stochastic Gradient Descent",
+                    "topics": [
+                        "1.5.1. Classification",
+                        "1.5.2. Regression",
+                        "1.5.3. Online One-Class SVM",
+                        "1.5.4. Stochastic Gradient Descent for sparse data",
+                        "1.5.5. Complexity",
+                        "1.5.6. Stopping criterion",
+                        "1.5.7. Tips on Practical Use",
+                        "1.5.8. Mathematical formulation",
+                        "1.5.9. Implementation details"
+                    ]
+                },
+                {
+                    "title": "1.5. Stochastic Gradient Descent\u00b6",
+                    "topics": [
+                        "1.5.1. Classification\u00b6",
+                        "1.5.2. Regression\u00b6",
+                        "1.5.3. Online One-Class SVM\u00b6",
+                        "1.5.4. Stochastic Gradient Descent for sparse data\u00b6",
+                        "1.5.5. Complexity\u00b6",
+                        "1.5.6. Stopping criterion\u00b6",
+                        "1.5.7. Tips on Practical Use\u00b6",
+                        "1.5.8. Mathematical formulation\u00b6",
+                        "1.5.9. Implementation details\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.6. Nearest Neighbors \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.6. Nearest Neighbors",
+                    "topics": [
+                        "1.6.1. Unsupervised Nearest Neighbors",
+                        "1.6.2. Nearest Neighbors Classification",
+                        "1.6.3. Nearest Neighbors Regression",
+                        "1.6.4. Nearest Neighbor Algorithms",
+                        "1.6.5. Nearest Centroid Classifier",
+                        "1.6.6. Nearest Neighbors Transformer",
+                        "1.6.7. Neighborhood Components Analysis"
+                    ]
+                },
+                {
+                    "title": "1.6. Nearest Neighbors\u00b6",
+                    "topics": [
+                        "1.6.1. Unsupervised Nearest Neighbors\u00b6",
+                        "1.6.2. Nearest Neighbors Classification\u00b6",
+                        "1.6.3. Nearest Neighbors Regression\u00b6",
+                        "1.6.4. Nearest Neighbor Algorithms\u00b6",
+                        "1.6.5. Nearest Centroid Classifier\u00b6",
+                        "1.6.6. Nearest Neighbors Transformer\u00b6",
+                        "1.6.7. Neighborhood Components Analysis\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "3. The thickness of a link between sample 3 and another point is proportional",
+            "subsections": [
+                {
+                    "title": "1.7. Gaussian Processes \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.7. Gaussian Processes",
+                    "topics": [
+                        "1.7.1. Gaussian Process Regression (GPR)",
+                        "1.7.2. Gaussian Process Classification (GPC)",
+                        "1.7.3. GPC examples",
+                        "1.7.4. Kernels for Gaussian Processes"
+                    ]
+                },
+                {
+                    "title": "1.7. Gaussian Processes\u00b6",
+                    "topics": [
+                        "1.7.1. Gaussian Process Regression (GPR)\u00b6",
+                        "1.7.2. Gaussian Process Classification (GPC)\u00b6",
+                        "1.7.3. GPC examples\u00b6",
+                        "1.7.4. Kernels for Gaussian Processes\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.8. Cross decomposition \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.8. Cross decomposition",
+                    "topics": [
+                        "1.8.1. PLSCanonical",
+                        "1.8.2. PLSSVD",
+                        "1.8.3. PLSRegression",
+                        "1.8.4. Canonical Correlation Analysis"
+                    ]
+                },
+                {
+                    "title": "1.8. Cross decomposition\u00b6",
+                    "topics": [
+                        "1.8.1. PLSCanonical\u00b6",
+                        "1.8.2. PLSSVD\u00b6",
+                        "1.8.3. PLSRegression\u00b6",
+                        "1.8.4. Canonical Correlation Analysis\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.9. Naive Bayes \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.9. Naive Bayes",
+                    "topics": [
+                        "1.9.1. Gaussian Naive Bayes",
+                        "1.9.2. Multinomial Naive Bayes",
+                        "1.9.3. Complement Naive Bayes",
+                        "1.9.4. Bernoulli Naive Bayes",
+                        "1.9.5. Categorical Naive Bayes",
+                        "1.9.6. Out-of-core naive Bayes model fitting"
+                    ]
+                },
+                {
+                    "title": "1.9. Naive Bayes\u00b6",
+                    "topics": [
+                        "1.9.1. Gaussian Naive Bayes\u00b6",
+                        "1.9.2. Multinomial Naive Bayes\u00b6",
+                        "1.9.3. Complement Naive Bayes\u00b6",
+                        "1.9.4. Bernoulli Naive Bayes\u00b6",
+                        "1.9.5. Categorical Naive Bayes\u00b6",
+                        "1.9.6. Out-of-core naive Bayes model fitting\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.10. Decision Trees \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.10. Decision Trees",
+                    "topics": [
+                        "1.10.1. Classification",
+                        "1.10.2. Regression",
+                        "1.10.3. Multi-output problems",
+                        "1.10.4. Complexity",
+                        "1.10.5. Tips on practical use",
+                        "1.10.6. Tree algorithms: ID3, C4.5, C5.0 and CART",
+                        "1.10.7. Mathematical formulation",
+                        "1.10.8. Missing Values Support",
+                        "1.10.9. Minimal Cost-Complexity Pruning"
+                    ]
+                },
+                {
+                    "title": "1.10. Decision Trees\u00b6",
+                    "topics": [
+                        "1.10.1. Classification\u00b6",
+                        "1.10.2. Regression\u00b6",
+                        "1.10.3. Multi-output problems\u00b6",
+                        "1.10.4. Complexity\u00b6",
+                        "1.10.5. Tips on practical use\u00b6",
+                        "1.10.6. Tree algorithms: ID3, C4.5, C5.0 and CART\u00b6",
+                        "1.10.7. Mathematical formulation\u00b6",
+                        "1.10.8. Missing Values Support\u00b6",
+                        "1.10.9. Minimal Cost-Complexity Pruning\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.11. Ensembles: Gradient boosting, random forests, bagging, voting, stacking \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.11. Ensembles: Gradient boosting, random forests, bagging, voting, stacking",
+                    "topics": [
+                        "1.11.1. Gradient-boosted trees",
+                        "1.11.2. Random forests and other randomized tree ensembles",
+                        "1.11.3. Bagging meta-estimator",
+                        "1.11.4. Voting Classifier",
+                        "1.11.5. Voting Regressor",
+                        "1.11.6. Stacked generalization",
+                        "1.11.7. AdaBoost"
+                    ]
+                },
+                {
+                    "title": "1.11. Ensembles: Gradient boosting, random forests, bagging, voting, stacking\u00b6",
+                    "topics": [
+                        "1.11.1. Gradient-boosted trees\u00b6",
+                        "1.11.2. Random forests and other randomized tree ensembles\u00b6",
+                        "1.11.3. Bagging meta-estimator\u00b6",
+                        "1.11.4. Voting Classifier\u00b6",
+                        "1.11.5. Voting Regressor\u00b6",
+                        "1.11.6. Stacked generalization\u00b6",
+                        "1.11.7. AdaBoost\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "2022. Machine Learning Applications to Land and Structure Valuation.",
+            "subsections": [
+                {
+                    "title": "1.12. Multiclass and multioutput algorithms \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.12. Multiclass and multioutput algorithms",
+                    "topics": [
+                        "1.12.1. Multiclass classification",
+                        "1.12.2. Multilabel classification",
+                        "1.12.3. Multiclass-multioutput classification",
+                        "1.12.4. Multioutput regression"
+                    ]
+                },
+                {
+                    "title": "1.12. Multiclass and multioutput algorithms\u00b6",
+                    "topics": [
+                        "1.12.1. Multiclass classification\u00b6",
+                        "1.12.2. Multilabel classification\u00b6",
+                        "1.12.3. Multiclass-multioutput classification\u00b6",
+                        "1.12.4. Multioutput regression\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.13. Feature selection \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.13. Feature selection",
+                    "topics": [
+                        "1.13.1. Removing features with low variance",
+                        "1.13.2. Univariate feature selection",
+                        "1.13.3. Recursive feature elimination",
+                        "1.13.4. Feature selection using SelectFromModel",
+                        "1.13.5. Sequential Feature Selection",
+                        "1.13.6. Feature selection as part of a pipeline"
+                    ]
+                },
+                {
+                    "title": "1.13. Feature selection\u00b6",
+                    "topics": [
+                        "1.13.1. Removing features with low variance\u00b6",
+                        "1.13.2. Univariate feature selection\u00b6",
+                        "1.13.3. Recursive feature elimination\u00b6",
+                        "1.13.4. Feature selection using SelectFromModel\u00b6",
+                        "1.13.5. Sequential Feature Selection\u00b6",
+                        "1.13.6. Feature selection as part of a pipeline\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.14. Semi-supervised learning \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.14. Semi-supervised learning",
+                    "topics": [
+                        "1.14.1. Self Training",
+                        "1.14.2. Label Propagation"
+                    ]
+                },
+                {
+                    "title": "1.14. Semi-supervised learning\u00b6",
+                    "topics": [
+                        "1.14.1. Self Training\u00b6",
+                        "1.14.2. Label Propagation\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.15. Isotonic regression \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.15. Isotonic regression",
+                    "topics": []
+                },
+                {
+                    "title": "1.15. Isotonic regression\u00b6",
+                    "topics": []
+                },
+                {
+                    "title": "1.16. Probability calibration \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.16. Probability calibration",
+                    "topics": [
+                        "1.16.1. Calibration curves",
+                        "1.16.2. Calibrating a classifier",
+                        "1.16.3. Usage"
+                    ]
+                },
+                {
+                    "title": "1.16. Probability calibration\u00b6",
+                    "topics": [
+                        "1.16.1. Calibration curves\u00b6",
+                        "1.16.2. Calibrating a classifier\u00b6",
+                        "1.16.3. Usage\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.17. Neural network models (supervised) \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "1.17. Neural network models (supervised)",
+                    "topics": [
+                        "1.17.1. Multi-layer Perceptron",
+                        "1.17.2. Classification",
+                        "1.17.3. Regression",
+                        "1.17.4. Regularization",
+                        "1.17.5. Algorithms",
+                        "1.17.6. Complexity",
+                        "1.17.7. Mathematical formulation",
+                        "1.17.8. Tips on Practical Use",
+                        "1.17.9. More control with warm_start"
+                    ]
+                },
+                {
+                    "title": "1.17. Neural network models (supervised)\u00b6",
+                    "topics": [
+                        "1.17.1. Multi-layer Perceptron\u00b6",
+                        "1.17.2. Classification\u00b6",
+                        "1.17.3. Regression\u00b6",
+                        "1.17.4. Regularization\u00b6",
+                        "1.17.5. Algorithms\u00b6",
+                        "1.17.6. Complexity\u00b6",
+                        "1.17.7. Mathematical formulation\u00b6",
+                        "1.17.8. Tips on Practical Use\u00b6",
+                        "1.17.9. More control with warm_start\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.1. Gaussian mixture models \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.1. Gaussian mixture models",
+                    "topics": [
+                        "2.1.1. Gaussian Mixture",
+                        "2.1.2. Variational Bayesian Gaussian Mixture"
+                    ]
+                },
+                {
+                    "title": "2.1. Gaussian mixture models\u00b6",
+                    "topics": [
+                        "2.1.1. Gaussian Mixture\u00b6",
+                        "2.1.2. Variational Bayesian Gaussian Mixture\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.2. Manifold learning \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.2. Manifold learning",
+                    "topics": [
+                        "2.2.1. Introduction",
+                        "2.2.2. Isomap",
+                        "2.2.3. Locally Linear Embedding",
+                        "2.2.4. Modified Locally Linear Embedding",
+                        "2.2.5. Hessian Eigenmapping",
+                        "2.2.6. Spectral Embedding",
+                        "2.2.7. Local Tangent Space Alignment",
+                        "2.2.8. Multi-dimensional Scaling (MDS)",
+                        "2.2.9. t-distributed Stochastic Neighbor Embedding (t-SNE)",
+                        "2.2.10. Tips on practical use"
+                    ]
+                },
+                {
+                    "title": "2.2. Manifold learning\u00b6",
+                    "topics": [
+                        "2.2.1. Introduction\u00b6",
+                        "2.2.2. Isomap\u00b6",
+                        "2.2.3. Locally Linear Embedding\u00b6",
+                        "2.2.4. Modified Locally Linear Embedding\u00b6",
+                        "2.2.5. Hessian Eigenmapping\u00b6",
+                        "2.2.6. Spectral Embedding\u00b6",
+                        "2.2.7. Local Tangent Space Alignment\u00b6",
+                        "2.2.8. Multi-dimensional Scaling (MDS)\u00b6",
+                        "2.2.9. t-distributed Stochastic Neighbor Embedding (t-SNE)\u00b6",
+                        "2.2.10. Tips on practical use\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.3. Clustering \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.3. Clustering",
+                    "topics": [
+                        "2.3.1. Overview of clustering methods",
+                        "2.3.2. K-means",
+                        "2.3.3. Affinity Propagation",
+                        "2.3.4. Mean Shift",
+                        "2.3.5. Spectral clustering",
+                        "2.3.6. Hierarchical clustering",
+                        "2.3.7. DBSCAN",
+                        "2.3.8. HDBSCAN",
+                        "2.3.9. OPTICS",
+                        "2.3.10. BIRCH",
+                        "2.3.11. Clustering performance evaluation"
+                    ]
+                },
+                {
+                    "title": "2.3. Clustering\u00b6",
+                    "topics": [
+                        "2.3.1. Overview of clustering methods\u00b6",
+                        "2.3.2. K-means\u00b6",
+                        "2.3.3. Affinity Propagation\u00b6",
+                        "2.3.4. Mean Shift\u00b6",
+                        "2.3.5. Spectral clustering\u00b6",
+                        "2.3.6. Hierarchical clustering\u00b6",
+                        "2.3.7. DBSCAN\u00b6",
+                        "2.3.8. HDBSCAN\u00b6",
+                        "2.3.9. OPTICS\u00b6",
+                        "2.3.10. BIRCH\u00b6",
+                        "2.3.11. Clustering performance evaluation\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.4. Biclustering \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.4. Biclustering",
+                    "topics": [
+                        "2.4.1. Spectral Co-Clustering",
+                        "2.4.2. Spectral Biclustering",
+                        "2.4.3. Biclustering evaluation"
+                    ]
+                },
+                {
+                    "title": "2.4. Biclustering\u00b6",
+                    "topics": [
+                        "2.4.1. Spectral Co-Clustering\u00b6",
+                        "2.4.2. Spectral Biclustering\u00b6",
+                        "2.4.3. Biclustering evaluation\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.5. Decomposing signals in components (matrix factorization problems) \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.5. Decomposing signals in components (matrix factorization problems)",
+                    "topics": [
+                        "2.5.1. Principal component analysis (PCA)",
+                        "2.5.2. Kernel Principal Component Analysis (kPCA)",
+                        "2.5.3. Truncated singular value decomposition and latent semantic analysis",
+                        "2.5.4. Dictionary Learning",
+                        "2.5.5. Factor Analysis",
+                        "2.5.6. Independent component analysis (ICA)",
+                        "2.5.7. Non-negative matrix factorization (NMF or NNMF)",
+                        "2.5.8. Latent Dirichlet Allocation (LDA)"
+                    ]
+                },
+                {
+                    "title": "2.5. Decomposing signals in components (matrix factorization problems)\u00b6",
+                    "topics": [
+                        "2.5.1. Principal component analysis (PCA)\u00b6",
+                        "2.5.2. Kernel Principal Component Analysis (kPCA)\u00b6",
+                        "2.5.3. Truncated singular value decomposition and latent semantic analysis\u00b6",
+                        "2.5.4. Dictionary Learning\u00b6",
+                        "2.5.5. Factor Analysis\u00b6",
+                        "2.5.6. Independent component analysis (ICA)\u00b6",
+                        "2.5.7. Non-negative matrix factorization (NMF or NNMF)\u00b6",
+                        "2.5.8. Latent Dirichlet Allocation (LDA)\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.6. Covariance estimation \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.6. Covariance estimation",
+                    "topics": [
+                        "2.6.1. Empirical covariance",
+                        "2.6.2. Shrunk Covariance",
+                        "2.6.3. Sparse inverse covariance",
+                        "2.6.4. Robust Covariance Estimation"
+                    ]
+                },
+                {
+                    "title": "2.6. Covariance estimation\u00b6",
+                    "topics": [
+                        "2.6.1. Empirical covariance\u00b6",
+                        "2.6.2. Shrunk Covariance\u00b6",
+                        "2.6.3. Sparse inverse covariance\u00b6",
+                        "2.6.4. Robust Covariance Estimation\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.7. Novelty and Outlier Detection \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.7. Novelty and Outlier Detection",
+                    "topics": [
+                        "2.7.1. Overview of outlier detection methods",
+                        "2.7.2. Novelty Detection",
+                        "2.7.3. Outlier Detection",
+                        "2.7.4. Novelty detection with Local Outlier Factor"
+                    ]
+                },
+                {
+                    "title": "2.7. Novelty and Outlier Detection\u00b6",
+                    "topics": [
+                        "2.7.1. Overview of outlier detection methods\u00b6",
+                        "2.7.2. Novelty Detection\u00b6",
+                        "2.7.3. Outlier Detection\u00b6",
+                        "2.7.4. Novelty detection with Local Outlier Factor\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.8. Density Estimation \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.8. Density Estimation",
+                    "topics": [
+                        "2.8.1. Density Estimation: Histograms",
+                        "2.8.2. Kernel Density Estimation"
+                    ]
+                },
+                {
+                    "title": "2.8. Density Estimation\u00b6",
+                    "topics": [
+                        "2.8.1. Density Estimation: Histograms\u00b6",
+                        "2.8.2. Kernel Density Estimation\u00b6"
+                    ]
+                },
+                {
+                    "title": "2.9. Neural network models (unsupervised) \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "2.9. Neural network models (unsupervised)",
+                    "topics": [
+                        "2.9.1. Restricted Boltzmann machines"
+                    ]
+                },
+                {
+                    "title": "2.9. Neural network models (unsupervised)\u00b6",
+                    "topics": [
+                        "2.9.1. Restricted Boltzmann machines\u00b6"
+                    ]
+                },
+                {
+                    "title": "3.1. Cross-validation: evaluating estimator performance \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "3.1. Cross-validation: evaluating estimator performance",
+                    "topics": [
+                        "3.1.1. Computing cross-validated metrics",
+                        "3.1.2. Cross validation iterators",
+                        "3.1.3. A note on shuffling",
+                        "3.1.4. Cross validation and model selection",
+                        "3.1.5. Permutation test score"
+                    ]
+                },
+                {
+                    "title": "3.1. Cross-validation: evaluating estimator performance\u00b6",
+                    "topics": [
+                        "3.1.1. Computing cross-validated metrics\u00b6",
+                        "3.1.2. Cross validation iterators\u00b6",
+                        "3.1.3. A note on shuffling\u00b6",
+                        "3.1.4. Cross validation and model selection\u00b6",
+                        "3.1.5. Permutation test score\u00b6"
+                    ]
+                },
+                {
+                    "title": "3.2. Tuning the hyper-parameters of an estimator \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "3.2. Tuning the hyper-parameters of an estimator",
+                    "topics": [
+                        "3.2.1. Exhaustive Grid Search",
+                        "3.2.2. Randomized Parameter Optimization",
+                        "3.2.3. Searching for optimal parameters with successive halving",
+                        "3.2.4. Tips for parameter search",
+                        "3.2.5. Alternatives to brute force parameter search"
+                    ]
+                },
+                {
+                    "title": "3.2. Tuning the hyper-parameters of an estimator\u00b6",
+                    "topics": [
+                        "3.2.1. Exhaustive Grid Search\u00b6",
+                        "3.2.2. Randomized Parameter Optimization\u00b6",
+                        "3.2.3. Searching for optimal parameters with successive halving\u00b6",
+                        "3.2.4. Tips for parameter search\u00b6",
+                        "3.2.5. Alternatives to brute force parameter search\u00b6"
+                    ]
+                },
+                {
+                    "title": "3.3. Metrics and scoring: quantifying the quality of predictions \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "3.3. Metrics and scoring: quantifying the quality of predictions",
+                    "topics": [
+                        "3.3.1. The scoring parameter: defining model evaluation rules",
+                        "3.3.2. Classification metrics",
+                        "3.3.3. Multilabel ranking metrics",
+                        "3.3.4. Regression metrics",
+                        "3.3.5. Clustering metrics",
+                        "3.3.6. Dummy estimators"
+                    ]
+                },
+                {
+                    "title": "3.3. Metrics and scoring: quantifying the quality of predictions\u00b6",
+                    "topics": [
+                        "3.3.1. The scoring parameter: defining model evaluation rules\u00b6",
+                        "3.3.2. Classification metrics\u00b6",
+                        "3.3.3. Multilabel ranking metrics\u00b6",
+                        "3.3.4. Regression metrics\u00b6",
+                        "3.3.5. Clustering metrics\u00b6",
+                        "3.3.6. Dummy estimators\u00b6"
+                    ]
+                },
+                {
+                    "title": "3.4. Validation curves: plotting scores to evaluate models \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "3.4. Validation curves: plotting scores to evaluate models",
+                    "topics": [
+                        "3.4.1. Validation curve",
+                        "3.4.2. Learning curve"
+                    ]
+                },
+                {
+                    "title": "3.4. Validation curves: plotting scores to evaluate models\u00b6",
+                    "topics": [
+                        "3.4.1. Validation curve\u00b6",
+                        "3.4.2. Learning curve\u00b6"
+                    ]
+                },
+                {
+                    "title": "4.1. Partial Dependence and Individual Conditional Expectation plots \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "4.1. Partial Dependence and Individual Conditional Expectation plots",
+                    "topics": [
+                        "4.1.1. Partial dependence plots",
+                        "4.1.2. Individual conditional expectation (ICE) plot",
+                        "4.1.3. Mathematical Definition",
+                        "4.1.4. Computation methods"
+                    ]
+                },
+                {
+                    "title": "4.1. Partial Dependence and Individual Conditional Expectation plots\u00b6",
+                    "topics": [
+                        "4.1.1. Partial dependence plots\u00b6",
+                        "4.1.2. Individual conditional expectation (ICE) plot\u00b6",
+                        "4.1.3. Mathematical Definition\u00b6",
+                        "4.1.4. Computation methods\u00b6"
+                    ]
+                },
+                {
+                    "title": "4.2. Permutation feature importance \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "4.2. Permutation feature importance",
+                    "topics": [
+                        "4.2.1. Outline of the permutation importance algorithm",
+                        "4.2.2. Relation to impurity-based importance in trees",
+                        "4.2.3. Misleading values on strongly correlated features"
+                    ]
+                },
+                {
+                    "title": "4.2. Permutation feature importance\u00b6",
+                    "topics": [
+                        "4.2.1. Outline of the permutation importance algorithm\u00b6",
+                        "4.2.2. Relation to impurity-based importance in trees\u00b6",
+                        "4.2.3. Misleading values on strongly correlated features\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5. Visualizations \u2014 scikit-learn 1.4.2 documentation",
+            "subsections": []
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations\u00b6",
+            "subsections": [
+                {
+                    "title": "5.1. Available Plotting Utilities\u00b6",
+                    "topics": [
+                        "5.1.1. Display Objects\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.1. Pipelines and composite estimators \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.1. Pipelines and composite estimators",
+                    "topics": [
+                        "6.1.1. Pipeline: chaining estimators",
+                        "6.1.2. Transforming target in regression",
+                        "6.1.3. FeatureUnion: composite feature spaces",
+                        "6.1.4. ColumnTransformer for heterogeneous data",
+                        "6.1.5. Visualizing Composite Estimators"
+                    ]
+                },
+                {
+                    "title": "6.1. Pipelines and composite estimators\u00b6",
+                    "topics": [
+                        "6.1.1. Pipeline: chaining estimators\u00b6",
+                        "6.1.2. Transforming target in regression\u00b6",
+                        "6.1.3. FeatureUnion: composite feature spaces\u00b6",
+                        "6.1.4. ColumnTransformer for heterogeneous data\u00b6",
+                        "6.1.5. Visualizing Composite Estimators\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.2. Feature extraction \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.2. Feature extraction",
+                    "topics": [
+                        "6.2.1. Loading features from dicts",
+                        "6.2.2. Feature hashing",
+                        "6.2.3. Text feature extraction",
+                        "6.2.4. Image feature extraction"
+                    ]
+                },
+                {
+                    "title": "6.2. Feature extraction\u00b6",
+                    "topics": [
+                        "6.2.1. Loading features from dicts\u00b6",
+                        "6.2.2. Feature hashing\u00b6",
+                        "6.2.3. Text feature extraction\u00b6",
+                        "6.2.4. Image feature extraction\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.3. Preprocessing data \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.3. Preprocessing data",
+                    "topics": [
+                        "6.3.1. Standardization, or mean removal and variance scaling",
+                        "6.3.2. Non-linear transformation",
+                        "6.3.3. Normalization",
+                        "6.3.4. Encoding categorical features",
+                        "6.3.5. Discretization",
+                        "6.3.6. Imputation of missing values",
+                        "6.3.7. Generating polynomial features",
+                        "6.3.8. Custom transformers"
+                    ]
+                },
+                {
+                    "title": "6.3. Preprocessing data\u00b6",
+                    "topics": [
+                        "6.3.1. Standardization, or mean removal and variance scaling\u00b6",
+                        "6.3.2. Non-linear transformation\u00b6",
+                        "6.3.3. Normalization\u00b6",
+                        "6.3.4. Encoding categorical features\u00b6",
+                        "6.3.5. Discretization\u00b6",
+                        "6.3.6. Imputation of missing values\u00b6",
+                        "6.3.7. Generating polynomial features\u00b6",
+                        "6.3.8. Custom transformers\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.4. Imputation of missing values \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.4. Imputation of missing values",
+                    "topics": [
+                        "6.4.1. Univariate vs. Multivariate Imputation",
+                        "6.4.2. Univariate feature imputation",
+                        "6.4.3. Multivariate feature imputation",
+                        "6.4.4. Nearest neighbors imputation",
+                        "6.4.5. Keeping the number of features constant",
+                        "6.4.6. Marking imputed values",
+                        "6.4.7. Estimators that handle NaN values"
+                    ]
+                },
+                {
+                    "title": "6.4. Imputation of missing values\u00b6",
+                    "topics": [
+                        "6.4.1. Univariate vs. Multivariate Imputation\u00b6",
+                        "6.4.2. Univariate feature imputation\u00b6",
+                        "6.4.3. Multivariate feature imputation\u00b6",
+                        "6.4.4. Nearest neighbors imputation\u00b6",
+                        "6.4.5. Keeping the number of features constant\u00b6",
+                        "6.4.6. Marking imputed values\u00b6",
+                        "6.4.7. Estimators that handle NaN values\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.5. Unsupervised dimensionality reduction \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.5. Unsupervised dimensionality reduction",
+                    "topics": [
+                        "6.5.1. PCA: principal component analysis",
+                        "6.5.2. Random projections",
+                        "6.5.3. Feature agglomeration"
+                    ]
+                },
+                {
+                    "title": "6.5. Unsupervised dimensionality reduction\u00b6",
+                    "topics": [
+                        "6.5.1. PCA: principal component analysis\u00b6",
+                        "6.5.2. Random projections\u00b6",
+                        "6.5.3. Feature agglomeration\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.6. Random Projection \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.6. Random Projection",
+                    "topics": [
+                        "6.6.1. The Johnson-Lindenstrauss lemma",
+                        "6.6.2. Gaussian random projection",
+                        "6.6.3. Sparse random projection",
+                        "6.6.4. Inverse Transform"
+                    ]
+                },
+                {
+                    "title": "6.6. Random Projection\u00b6",
+                    "topics": [
+                        "6.6.1. The Johnson-Lindenstrauss lemma\u00b6",
+                        "6.6.2. Gaussian random projection\u00b6",
+                        "6.6.3. Sparse random projection\u00b6",
+                        "6.6.4. Inverse Transform\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.7. Kernel Approximation \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.7. Kernel Approximation",
+                    "topics": [
+                        "6.7.1. Nystroem Method for Kernel Approximation",
+                        "6.7.2. Radial Basis Function Kernel",
+                        "6.7.3. Additive Chi Squared Kernel",
+                        "6.7.4. Skewed Chi Squared Kernel",
+                        "6.7.5. Polynomial Kernel Approximation via Tensor Sketch",
+                        "6.7.6. Mathematical Details"
+                    ]
+                },
+                {
+                    "title": "6.7. Kernel Approximation\u00b6",
+                    "topics": [
+                        "6.7.1. Nystroem Method for Kernel Approximation\u00b6",
+                        "6.7.2. Radial Basis Function Kernel\u00b6",
+                        "6.7.3. Additive Chi Squared Kernel\u00b6",
+                        "6.7.4. Skewed Chi Squared Kernel\u00b6",
+                        "6.7.5. Polynomial Kernel Approximation via Tensor Sketch\u00b6",
+                        "6.7.6. Mathematical Details\u00b6"
+                    ]
+                },
+                {
+                    "title": "6.8. Pairwise metrics, Affinities and Kernels \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.8. Pairwise metrics, Affinities and Kernels",
+                    "topics": [
+                        "6.8.1. Cosine similarity",
+                        "6.8.2. Linear kernel",
+                        "6.8.3. Polynomial kernel",
+                        "6.8.4. Sigmoid kernel",
+                        "6.8.5. RBF kernel",
+                        "6.8.6. Laplacian kernel",
+                        "6.8.7. Chi-squared kernel"
+                    ]
+                },
+                {
+                    "title": "6.8. Pairwise metrics, Affinities and Kernels\u00b6",
+                    "topics": [
+                        "6.8.1. Cosine similarity\u00b6",
+                        "6.8.2. Linear kernel\u00b6",
+                        "6.8.3. Polynomial kernel\u00b6",
+                        "6.8.4. Sigmoid kernel\u00b6",
+                        "6.8.5. RBF kernel\u00b6",
+                        "6.8.6. Laplacian kernel\u00b6",
+                        "6.8.7. Chi-squared kernel\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "1. d(a, b) >= 0, for all a and b",
+            "subsections": []
+        },
+        {
+            "title": "2. d(a, b) == 0, if and only if a = b, positive definiteness",
+            "subsections": []
+        },
+        {
+            "title": "3. d(a, b) == d(b, a), symmetry",
+            "subsections": []
+        },
+        {
+            "title": "4. d(a, c) <= d(a, b) + d(b, c), the triangle inequality",
+            "subsections": [
+                {
+                    "title": "6.9. Transforming the prediction target (y) \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                },
+                {
+                    "title": "6.9. Transforming the prediction target (y)",
+                    "topics": [
+                        "6.9.1. Label binarization",
+                        "6.9.2. Label encoding"
+                    ]
+                },
+                {
+                    "title": "6.9. Transforming the prediction target (y)\u00b6",
+                    "topics": [
+                        "6.9.1. Label binarization\u00b6",
+                        "6.9.2. Label encoding\u00b6"
+                    ]
+                },
+                {
+                    "title": "7.1. Toy datasets \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.2. Real world datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.3. Generated datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.4. Loading other datasets",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets\u00b6",
+                    "topics": [
+                        "7.1.1. Iris plants dataset\u00b6",
+                        "7.1.2. Diabetes dataset\u00b6",
+                        "7.1.3. Optical recognition of handwritten digits dataset\u00b6",
+                        "7.1.4. Linnerrud dataset\u00b6",
+                        "7.1.5. Wine recognition dataset\u00b6",
+                        "7.1.6. Breast cancer wisconsin (diagnostic) dataset\u00b6"
+                    ]
+                },
+                {
+                    "title": "7.2. Real world datasets \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.2. Real world datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.3. Generated datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.4. Loading other datasets",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "7.2. Real world datasets\u00b6",
+                    "topics": [
+                        "7.2.1. The Olivetti faces dataset\u00b6",
+                        "7.2.2. The 20 newsgroups text dataset\u00b6",
+                        "7.2.3. The Labeled Faces in the Wild face recognition dataset\u00b6",
+                        "7.2.4. Forest covertypes\u00b6",
+                        "7.2.5. RCV1 dataset\u00b6",
+                        "7.2.6. Kddcup 99 dataset\u00b6",
+                        "7.2.7. California Housing dataset\u00b6",
+                        "7.2.8. Species distribution dataset\u00b6"
+                    ]
+                },
+                {
+                    "title": "7.3. Generated datasets \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.2. Real world datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.3. Generated datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.4. Loading other datasets",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "7.3. Generated datasets\u00b6",
+                    "topics": [
+                        "7.3.1. Generators for classification and clustering\u00b6",
+                        "7.3.2. Generators for regression\u00b6",
+                        "7.3.3. Generators for manifold learning\u00b6",
+                        "7.3.4. Generators for decomposition\u00b6"
+                    ]
+                },
+                {
+                    "title": "7.4. Loading other datasets \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": [
+                {
+                    "title": "7.1. Toy datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.2. Real world datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.3. Generated datasets",
+                    "topics": []
+                },
+                {
+                    "title": "7.4. Loading other datasets",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "7.4. Loading other datasets\u00b6",
+                    "topics": [
+                        "7.4.1. Sample images\u00b6",
+                        "7.4.2. Datasets in svmlight / libsvm format\u00b6",
+                        "7.4.3. Downloading datasets from the openml.org repository\u00b6",
+                        "7.4.4. Loading from external datasets\u00b6"
+                    ]
+                },
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": [
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data",
+                    "topics": []
+                },
+                {
+                    "title": "8.2. Computational Performance",
+                    "topics": []
+                },
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data\u00b6",
+                    "topics": [
+                        "8.1.1. Scaling with instances using out-of-core learning\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "2. could be any relevant way to extract features among the",
+            "subsections": [
+                {
+                    "title": "8.2. Computational Performance \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": [
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data",
+                    "topics": []
+                },
+                {
+                    "title": "8.2. Computational Performance",
+                    "topics": []
+                },
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "8.2. Computational Performance\u00b6",
+                    "topics": [
+                        "8.2.1. Prediction Latency\u00b6",
+                        "8.2.2. Prediction Throughput\u00b6",
+                        "8.2.3. Tips and Tricks\u00b6"
+                    ]
+                },
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration \u2014 scikit-learn 1.4.2 documentation",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": [
+                {
+                    "title": "8.1. Strategies to scale computationally: bigger data",
+                    "topics": []
+                },
+                {
+                    "title": "8.2. Computational Performance",
+                    "topics": []
+                },
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": [
+                {
+                    "title": "8.3. Parallelism, resource management, and configuration\u00b6",
+                    "topics": [
+                        "8.3.1. Parallelism\u00b6",
+                        "8.3.2. Configuration switches\u00b6"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence \u2014 scikit-learn 1.4.2 documentation",
+            "subsections": []
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence\u00b6",
+            "subsections": [
+                {
+                    "title": "9.1. Python specific serialization\u00b6",
+                    "topics": [
+                        "9.1.1. Security & maintainability limitations\u00b6",
+                        "9.1.2. A more secure format: skops\u00b6"
+                    ]
+                },
+                {
+                    "title": "9.2. Interoperable formats\u00b6",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "9. Model persistence \u2014 scikit-learn 1.4.2 documentation",
+            "subsections": []
+        },
+        {
+            "title": "1. Supervised learning",
+            "subsections": []
+        },
+        {
+            "title": "2. Unsupervised learning",
+            "subsections": []
+        },
+        {
+            "title": "3. Model selection and evaluation",
+            "subsections": []
+        },
+        {
+            "title": "4. Inspection",
+            "subsections": []
+        },
+        {
+            "title": "5. Visualizations",
+            "subsections": []
+        },
+        {
+            "title": "6. Dataset transformations",
+            "subsections": []
+        },
+        {
+            "title": "7. Dataset loading utilities",
+            "subsections": []
+        },
+        {
+            "title": "8. Computing with scikit-learn",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence",
+            "subsections": []
+        },
+        {
+            "title": "10. Common pitfalls and recommended practices",
+            "subsections": []
+        },
+        {
+            "title": "11. Dispatching",
+            "subsections": []
+        },
+        {
+            "title": "9. Model persistence\u00b6",
+            "subsections": [
+                {
+                    "title": "9.1. Python specific serialization\u00b6",
+                    "topics": [
+                        "9.1.1. Security & maintainability limitations\u00b6",
+                        "9.1.2. A more secure format: skops\u00b6"
+                    ]
+                },
+                {
+                    "title": "9.2. Interoperable formats\u00b6",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Metadata Routing \u2014 scikit-learn 1.4.2 documentation",
+            "subsections": []
+        },
+        {
+            "title": "1. Metadata Routing",
+            "subsections": [
+                {
+                    "title": "1.1. Usage Examples",
+                    "topics": [
+                        "1.1.1. Weighted scoring and fitting",
+                        "1.1.2. Weighted scoring and unweighted fitting",
+                        "1.1.3. Unweighted feature selection",
+                        "1.1.4. Advanced: Different scoring and fitting weights"
+                    ]
+                },
+                {
+                    "title": "1.2. API Interface",
+                    "topics": []
+                },
+                {
+                    "title": "1.3. Metadata Routing Support Status",
+                    "topics": []
+                }
+            ]
+        },
+        {
+            "title": "1. Metadata Routing\u00b6",
+            "subsections": [
+                {
+                    "title": "1.1. Usage Examples\u00b6",
+                    "topics": [
+                        "1.1.1. Weighted scoring and fitting\u00b6",
+                        "1.1.2. Weighted scoring and unweighted fitting\u00b6",
+                        "1.1.3. Unweighted feature selection\u00b6",
+                        "1.1.4. Advanced: Different scoring and fitting weights\u00b6"
+                    ]
+                },
+                {
+                    "title": "1.2. API Interface\u00b6",
+                    "topics": []
+                },
+                {
+                    "title": "1.3. Metadata Routing Support Status\u00b6",
+                    "topics": []
+                }
+            ]
+        }
+    ]
+}
